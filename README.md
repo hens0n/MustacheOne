@@ -1,5 +1,7 @@
 MustacheOne
 =============================
+
 Dependencies:
-*urllib2
-*BeautifulSoup
+-----------------
+* urllib2
+* BeautifulSoup
