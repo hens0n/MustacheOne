@@ -18,7 +18,7 @@ def PrintHeader():
 	"""
 	print(header)
 
-def GetInfo(IP):
+def GetIpInfo(IP):
 	PrintHeader()
 	soup = BeautifulSoup(urllib2.urlopen('http://www.ipvoid.com/scan/'+IP+'/').read())
 	theTRs = soup.find_all("tr")
