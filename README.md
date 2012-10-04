@@ -5,6 +5,8 @@ MustacheOne will quickly let you gather some basic information on IPs or URLs by
 MustasheOne makes use of the following sites:
 * [IPVoid][ipvoid]
 * [Network Solutions][networksolutions]
+* [Project Honey Pot][projecthoneypot]
+* [Robtex][robtex]
 
 Usage:
 -----------------
@@ -14,10 +16,13 @@ Usage:
 
 Dependencies:
 -----------------
+* [Python][python]
 * [Beautiful Soup][beautifulsoup]
-* [python][python]
+
 
 [ipvoid]: https://www.ipvoid.com
 [networksolutions]: http://www.networksolutions.com
 [beautifulsoup]: http://www.crummy.com/software/BeautifulSoup/
 [python]: http://www.python.org/
+[projecthoneypot]: https://www.projecthoneypot.org/
+[robtex]: http://www.robtex.com/
