@@ -3,12 +3,14 @@
 import datetime
 import sys
 
-import ipvoid
-import networksolutions
-import projecthoneypot
+from libraries import ipvoid
+from libraries import networksolutions
+from libraries import projecthoneypot
+from libraries import robtex
 
 def ReportHeader(query):
 	now = datetime.datetime.now()
+	print("==========================================================")
 	print("Report for " + query)
 	print(now)
 	print("==========================================================")
@@ -26,9 +28,10 @@ def main(argv):
 	for arg in argv:
 		ReportHeader (arg)
 		if IsIp(arg):
-			ipvoid.GetIpInfo(arg)
-			networksolutions.GetIpInfo(arg)
+			robtex.GetIpInfo(arg)
 			projecthoneypot.GetIpInfo(arg)
+			networksolutions.GetIpInfo(arg)
+			robtex.GetIpInfo(arg)
 
 
 	

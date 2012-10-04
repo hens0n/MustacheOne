@@ -14,10 +14,10 @@ Usage:
 
 Dependencies:
 -----------------
-* [urllib2][urllib2]
 * [Beautiful Soup][beautifulsoup]
+* [python][python]
 
 [ipvoid]: https://www.ipvoid.com
 [networksolutions]: http://www.networksolutions.com
-[urllib2]: http://docs.python.org/library/urllib2.html
 [beautifulsoup]: http://www.crummy.com/software/BeautifulSoup/
+[python]: http://www.python.org/
