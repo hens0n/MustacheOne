@@ -5,6 +5,7 @@ import sys
 
 import ipvoid
 import networksolutions
+import projecthoneypot
 
 def ReportHeader(query):
 	now = datetime.datetime.now()
@@ -24,9 +25,10 @@ def main(argv):
 
 	for arg in argv:
 		ReportHeader (arg)
-		if IsIp(query):
-			ipvoid.GetIpInfo(IP)
-			networksolutions.GetIpInfo(IP)
+		if IsIp(arg):
+			ipvoid.GetIpInfo(arg)
+			networksolutions.GetIpInfo(arg)
+			projecthoneypot.GetIpInfo(arg)
 
 
 	
