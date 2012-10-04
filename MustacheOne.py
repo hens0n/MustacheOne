@@ -28,9 +28,9 @@ def main(argv):
 	for arg in argv:
 		ReportHeader (arg)
 		if IsIp(arg):
-			robtex.GetIpInfo(arg)
-			projecthoneypot.GetIpInfo(arg)
+			ipvoid.GetIpInfo(arg)
 			networksolutions.GetIpInfo(arg)
+			projecthoneypot.GetIpInfo(arg)
 			robtex.GetIpInfo(arg)
 
 
