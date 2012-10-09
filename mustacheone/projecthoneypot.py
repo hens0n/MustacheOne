@@ -12,6 +12,8 @@ def GetIpInfo(IP):
 	for child in theTag.contents[3].children:
 		thestring +=child.string.encode('ascii', 'ignore')
 	print(thestring)
+
+	
 def PrintHeader():
 	header ="""         
 ______           _           _     _   _                         ______      _   

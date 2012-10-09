@@ -5,7 +5,6 @@ import urllib2
 from bs4 import BeautifulSoup
 
 
-
 def PrintHeader():
 	header ="""         
  _   _      _                      _     _____       _       _   _                 
@@ -23,3 +22,7 @@ def GetIpInfo(IP):
 	soup = BeautifulSoup(urllib2.urlopen('http://www.networksolutions.com/whois/results.jsp?ip='+IP).read())
 	thePreTag = soup.find("pre")
 	print(thePreTag.string)
+
+def GetDomainInfo(Domain):
+	PrintHeader()
+	print("Not implemented yet")
