@@ -2,8 +2,8 @@
 # -*- coding: latin-1 -*-
 import sys 
 import urllib2
-from bs4 import BeautifulSoup
 
+from bs4 import BeautifulSoup
 
 def PrintHeader():
 	header ="""         
