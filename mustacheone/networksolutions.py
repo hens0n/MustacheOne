@@ -25,4 +25,10 @@ def GetIpInfo(IP):
 
 def GetDomainInfo(Domain):
 	PrintHeader()
-	print("Not implemented yet")
+	soup = BeautifulSoup(urllib2.urlopen('http://www.networksolutions.com/whois-search/'+Domain).read())
+	theSummary = soup.find("div", {"class":"summary"})
+	rows = theSummary.findAll('tr')
+	for row in rows:
+		cols = row.findAll('td')
+		if type(cols[1].string).__name__ !=  'NoneType':
+			print(cols[0].string + ' ' +cols[1].string.strip())
