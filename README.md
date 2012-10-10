@@ -18,6 +18,7 @@ Dependencies:
 -----------------
 * [Python][python]
 * [Beautiful Soup][beautifulsoup]
+* [simplejson][simplejson]
 
 
 [ipvoid]: https://www.ipvoid.com
@@ -26,3 +27,4 @@ Dependencies:
 [python]: http://www.python.org/
 [projecthoneypot]: https://www.projecthoneypot.org/
 [robtex]: http://www.robtex.com/
+[simplejson]: https://github.com/simplejson/simplejson
