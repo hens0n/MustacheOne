@@ -47,8 +47,8 @@ def main(argv):
 		ReportHeader (arg)
 		if IsIp(arg):
 			ipvoid.GetIpInfoPost(arg)
-			#networksolutions.GetIpInfo(arg)
-			#projecthoneypot.GetIpInfo(arg)
+			networksolutions.GetIpInfo(arg)
+			projecthoneypot.GetIpInfo(arg)
 			#robtex.GetIpInfo(arg)
 		else:
 			networksolutions.GetDomainInfo(arg)

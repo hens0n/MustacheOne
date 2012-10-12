@@ -22,7 +22,7 @@ def PrintHeader():
 def GetIpInfoPost(IP):
 	PrintHeader()
 	url = 'http://www.ipvoid.com/scan/'+IP + '/'
-	values = {'url' : IP}
+	values = {'url' : IP, 'go':'Scan Now'}
 
 	data = urllib.urlencode(values)
 	req = urllib2.Request(url, data)
