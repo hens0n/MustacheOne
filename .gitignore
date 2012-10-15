@@ -1,4 +1,9 @@
 #################
+## Mustache One
+#################
+config.ini
+
+#################
 ## Eclipse
 #################
 
@@ -8,8 +13,8 @@
 bin/
 tmp/
 *.tmp
-*.bak
 *.swp
+*.bak
 *~.nib
 local.properties
 .classpath

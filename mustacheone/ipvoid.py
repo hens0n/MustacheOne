@@ -10,13 +10,10 @@ from bs4 import BeautifulSoup
 
 def PrintHeader():
 	header ="""         
- ___________ _   _       _     _ 
-|_   _| ___ \ | | |     (_)   | |
-  | | | |_/ / | | | ___  _  __| |
-  | | |  __/| | | |/ _ \| |/ _` |
- _| |_| |   \ \_/ / (_) | | (_| |
- \___/\_|    \___/ \___/|_|\__,_|
-	https://www.ipvoid.com
+************************
+IP Void
+https://www.ipvoid.com
+************************
 	"""
 	print(header)
 def GetIpInfoPost(IP):

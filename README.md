@@ -7,6 +7,7 @@ MustasheOne makes use of the following sites:
 * [Network Solutions][networksolutions]
 * [Project Honey Pot][projecthoneypot]
 * [Robtex][robtex]
+* [VirusTotal][virustotal]
 
 Usage:
 -----------------
@@ -28,3 +29,4 @@ Dependencies:
 [projecthoneypot]: https://www.projecthoneypot.org/
 [robtex]: http://www.robtex.com/
 [simplejson]: https://github.com/simplejson/simplejson
+[virustotal]: https://www.virustotal.com/

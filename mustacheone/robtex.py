@@ -30,12 +30,9 @@ def ParseListFromRobtex(tag_id,description, theSoup):
 
 def PrintHeader():
 	header ="""
-______      _   _____         
-| ___ \    | | |_   _|        
-| |_/ /___ | |__ | | _____  __
-|    // _ \| '_ \| |/ _ \ \/ /
-| |\ \ (_) | |_) | |  __/>  < 
-\_| \_\___/|_.__/\_/\___/_/\_\\
-	http://www.robtex.com
+************************
+RobTex
+http://www.robtex.com
+************************
 """
 	print(header)

@@ -3,6 +3,8 @@
 import datetime
 import sys
 import socket
+import ConfigParser
+
 
 from mustacheone import ipvoid
 from mustacheone import networksolutions
@@ -36,12 +38,25 @@ def IsIp(query):
 	except socket.error:
 		return False
 
+def getConfig(section, name):
+	try:
+		config = ConfigParser.RawConfigParser()
+		config.read('config.ini')
+		rtn = config.get(section,name)
+		return rtn
+	except ConfigParser.NoSectionError:
+		print("Section Not Found")
+	except ConfigParser.NoOptionError:
+		print("Option Not Found")
+
 def main(argv):
 	if len(argv)==0:
 		print("Please provide an argument")
 		print("Single URL usage: MustacheOne.py github.com")
 		print("Single IP usage: MustacheOne.py 208.78.70.16")
 		print("Combination usage: MustacheOne.py github.com 208.78.70.16 google.com")
+	
+	
 
 	for arg in argv:
 		ReportHeader (arg)
@@ -52,7 +67,11 @@ def main(argv):
 			#robtex.GetIpInfo(arg)
 		else:
 			networksolutions.GetDomainInfo(arg)
-			#virustotal.GetUrlReport(arg)
+			virustotalkey= getConfig("virustotal","apikey")
+			if virustotalkey != None:
+				virustotal.GetUrlReport(arg,virustotalkey)
+			else:
+				print("****You will need to put your Virus Total API key in config.ini.  Review the README")
 
 
 
