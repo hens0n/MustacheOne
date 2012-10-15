@@ -60,18 +60,23 @@ def main(argv):
 
 	for arg in argv:
 		ReportHeader (arg)
+
+		virustotalkey= getConfig("virustotal","apikey")
+		if virustotalkey != None:
+				virustotal.GetUrlReport(arg,virustotalkey)
+		else:
+			print("****You will need to put your Virus Total API key in config.ini.  Review the README")
+		
+
 		if IsIp(arg):
 			ipvoid.GetIpInfoPost(arg)
 			networksolutions.GetIpInfo(arg)
 			projecthoneypot.GetIpInfo(arg)
-			#robtex.GetIpInfo(arg)
+			robtex.GetIpInfo(arg)
 		else:
 			networksolutions.GetDomainInfo(arg)
-			virustotalkey= getConfig("virustotal","apikey")
-			if virustotalkey != None:
-				virustotal.GetUrlReport(arg,virustotalkey)
-			else:
-				print("****You will need to put your Virus Total API key in config.ini.  Review the README")
+			
+
 
 
 

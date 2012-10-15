@@ -5,16 +5,19 @@ import urllib
 import urllib2
 
 from bs4 import BeautifulSoup
-
-def GetIpInfoPost(IP):
+def PrintHeader():
+	header ="""  
+************************       
+DomainDossier
+http://centralops.net/co/DomainDossier.aspx
+************************ 
+	"""
+	print(header)
+def GetIpInfo(IP):
 	#PrintHeader()
-	url = BeautifulSoup(urllib2.urlopen('http://centralops.net/co/DomainDossier.aspx?dom_whois=true&dom_dns=true&traceroute=true&net_whois=true&svc_scan=true&x=15&y=11&addr=github.com').read())
-
-
-	data = urllib.urlencode(values)
-	req = urllib2.Request(url, data)
-	response = urllib2.urlopen(req)
-	the_page = response.read()
-
-	soup = BeautifulSoup(the_page)
-	print(soup)
+	try:
+		soup = BeautifulSoup(urllib2.urlopen('http://centralops.net/co/DomainDossier.aspx?dom_whois=true&dom_dns=true&traceroute=true&net_whois=true&svc_scan=true&x=15&y=11&addr='+IP).read())
+		print(soup)
+	except urllib2.HTTPError:
+		print("HTTP Error")
+	

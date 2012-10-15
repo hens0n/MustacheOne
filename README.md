@@ -21,6 +21,17 @@ Dependencies:
 * [Beautiful Soup][beautifulsoup]
 * [simplejson][simplejson]
 
+Configuration:
+-----------------
+You will need to create a file named "config.ini"
+
+Example config.ini
+<pre>
+	<code>
+		[virustotal]
+		apikey = yourAPIkey
+	</code>
+</pre>
 
 [ipvoid]: https://www.ipvoid.com
 [networksolutions]: http://www.networksolutions.com
