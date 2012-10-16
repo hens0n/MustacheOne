@@ -9,8 +9,8 @@ import ConfigParser
 from mustacheone import ipvoid
 from mustacheone import networksolutions
 from mustacheone import projecthoneypot
-from mustacheone import robtex
 from mustacheone import virustotal
+from mustacheone import intodns
 
 def ReportHeader(query):
 	header ="""
@@ -72,16 +72,13 @@ def main(argv):
 			ipvoid.GetIpInfoPost(arg)
 			networksolutions.GetIpInfo(arg)
 			projecthoneypot.GetIpInfo(arg)
-			robtex.GetIpInfo(arg)
 		else:
 			networksolutions.GetDomainInfo(arg)
-			
-
-
-
-
-	
+			intodns.GetDomainInfo(arg)
 
 if __name__ == "__main__":
-   main(sys.argv[1:])
+   #main(sys.argv[1:])
+   
+
+
 
