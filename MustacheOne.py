@@ -11,6 +11,7 @@ from mustacheone import networksolutions
 from mustacheone import projecthoneypot
 from mustacheone import virustotal
 from mustacheone import intodns
+from mustacheone import netcraft
 
 def ReportHeader(query):
 	header ="""
@@ -75,6 +76,8 @@ def main(argv):
 		else:
 			networksolutions.GetDomainInfo(arg)
 			intodns.GetDomainInfo(arg)
+			netcraft.GetDomainInfo(arg)
 
 if __name__ == "__main__":
 	main(sys.argv[1:])
+	

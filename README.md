@@ -8,6 +8,7 @@ MustasheOne makes use of the following sites:
 * [Project Honey Pot][projecthoneypot]
 * [VirusTotal][virustotal]
 * [intoDNS][intodns]
+* [NetCraft][netcraft]
 
 Usage:
 -----------------
@@ -42,3 +43,4 @@ Example config.ini
 [simplejson]: https://github.com/simplejson/simplejson
 [virustotal]: https://www.virustotal.com/
 [intodns]: http://www.intodns.com/
+[netcraft]: http://news.netcraft.com/
