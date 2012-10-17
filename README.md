@@ -1,6 +1,6 @@
 MustacheOne
 =============================
-MustacheOne will quickly let you gather some basic information on IPs or URLs by consolidate the information from different websites.
+MustacheOne will quickly let you gather some basic information on IPs or URLs by consolidating the information from different websites.
 
 MustasheOne makes use of the following sites:
 * [IPVoid][ipvoid]
