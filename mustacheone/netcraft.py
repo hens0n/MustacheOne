@@ -41,27 +41,6 @@ def GetDomainInfo(Domain):
 			if len(cols) ==5:
 				print(cols[0].get_text() + "\t\t"+ cols[1].get_text() + "\t\t"+ cols[2].get_text()+ "\t\t"+ cols[3].get_text()+ "\t\t"+ cols[4].get_text())
 
-		
-
-
-		#print(cols[2].b.renderContents().strip())
-		#for col in cols:
-			#c = col.renderContents().strip()
-			#if len(c) ==2:
-			#print(c)
-			#print("***************"+ type(row.td.nextSibling).__name__)
-		#print(row.td.nextSibling)
-		#print(row.td[0].renderContents().strip())
-
-
-	#print(len(theTables))
-
-
-
-
-
-
-
 def PrintHeader():
 	header ="""         
 ************************
