@@ -12,6 +12,7 @@ from mustacheone import projecthoneypot
 from mustacheone import virustotal
 from mustacheone import intodns
 from mustacheone import netcraft
+from mustacheone import google
 
 def ReportHeader(query):
 	header ="""
@@ -64,19 +65,22 @@ def main(argv):
 
 		virustotalkey= getConfig("virustotal","apikey")
 		if virustotalkey != None:
-				virustotal.GetUrlReport(arg,virustotalkey)
+				#virustotal.GetUrlReport(arg,virustotalkey)
+				print()
 		else:
 			print("****You will need to put your Virus Total API key in config.ini.  Review the README")
 		
 
 		if IsIp(arg):
 			ipvoid.GetIpInfoPost(arg)
-			networksolutions.GetIpInfo(arg)
 			projecthoneypot.GetIpInfo(arg)
+			networksolutions.GetIpInfo(arg)
 		else:
-			networksolutions.GetDomainInfo(arg)
 			intodns.GetDomainInfo(arg)
 			netcraft.GetDomainInfo(arg)
+			google.PrintQueries(arg)
+			networksolutions.GetDomainInfo(arg)
+
 
 if __name__ == "__main__":
 	main(sys.argv[1:])

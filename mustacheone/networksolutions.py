@@ -39,7 +39,6 @@ def GetDomainInfo(Domain):
 			c = col.renderContents().strip()
 			if len(c) > 4	:		
 				if col.strong != None:
-					
 					c = c.replace('\n','')
 					c = c.replace('\t','')
 					c = c.replace('<strong>','')

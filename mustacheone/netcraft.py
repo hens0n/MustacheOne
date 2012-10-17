@@ -17,15 +17,9 @@ def GetDomainInfo(Domain):
 		for row in rows:
 			cols = row.findAll('td')
 			if cols[0].b.renderContents().strip() != "Check another site:":
-				if  cols[1].a != None:
-					print(cols[0].b.renderContents().strip()+ ":" + cols[1].a.renderContents().strip())	
-				else:
-					print(cols[0].b.renderContents().strip()+ ":" + cols[1].renderContents().strip())
+				print(cols[0].get_text().strip()+ ":" + cols[1].get_text().strip())
+				print(cols[2].get_text().strip()+ ":\t" + cols[3].get_text().strip())
 
-				if  cols[3].a != None:
-					print(cols[2].b.renderContents().strip()+ ":\t" + cols[3].a.renderContents().strip())
-				else:
-					print(cols[2].b.renderContents().strip()+ ":\t" + cols[3].renderContents().strip())	
 	if len(theTables) >1:
 		print("")
 		print("")

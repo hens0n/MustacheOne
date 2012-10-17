@@ -1,15 +1,22 @@
 #!/usr/bin/python
 # -*- coding: latin-1 -*-
 import sys 
-import urllib
-import urllib2
 
-from bs4 import BeautifulSoup
+def PrintHeader():
+	header ="""         
+************************
+Google
+http://www.google.com
+************************
+	"""
+	print(header)
 
-def GetDomainInfo(Domain):
-	#PrintHeader()
-	#soup = BeautifulSoup(urllib2.urlopen('http://uptime.netcraft.com/up/graph/?host='+Domain).read())
-	#site:domain.com -www.domain.com
-	#filetype:xlsx OR filetype:pptx OR filetype:docx site:www.domain.com
-	#link:www.domain.com
-	#"@domain.com" -www.domain.com
+def PrintQueries(Domain):
+	PrintHeader()
+
+	print("Google queries to help with recon")
+	print("\t* Subdomains excluding www: site:domain.com -www."+Domain)
+	print("\t* Office files from "+Domain+": filetype:xlsx OR filetype:pptx OR filetype:docx site:"+Domain)
+	print("\t* PDF files from "+Domain+": filetype:pdf site:"+Domain)
+	print("\t* Links to "+Domain+": link:"+Domain)
+	print("\t* Email Addresses: \"@"+Domain+"\" -www."+Domain)
