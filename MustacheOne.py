@@ -65,8 +65,7 @@ def main(argv):
 
 		virustotalkey= getConfig("virustotal","apikey")
 		if virustotalkey != None:
-				#virustotal.GetUrlReport(arg,virustotalkey)
-				print()
+				virustotal.GetUrlReport(arg,virustotalkey)
 		else:
 			print("****You will need to put your Virus Total API key in config.ini.  Review the README")
 		
@@ -78,10 +77,9 @@ def main(argv):
 		else:
 			intodns.GetDomainInfo(arg)
 			netcraft.GetDomainInfo(arg)
-			google.PrintQueries(arg)
 			networksolutions.GetDomainInfo(arg)
+			google.PrintQueries(arg)
 
 
 if __name__ == "__main__":
 	main(sys.argv[1:])
-	

@@ -15,7 +15,7 @@ def PrintQueries(Domain):
 	PrintHeader()
 
 	print("Google queries to help with recon")
-	print("\t* Subdomains excluding www: site:domain.com -www."+Domain)
+	print("\t* Subdomains excluding www: site:"+Domain+" -www."+Domain)
 	print("\t* Office files from "+Domain+": filetype:xlsx OR filetype:pptx OR filetype:docx site:"+Domain)
 	print("\t* PDF files from "+Domain+": filetype:pdf site:"+Domain)
 	print("\t* Links to "+Domain+": link:"+Domain)

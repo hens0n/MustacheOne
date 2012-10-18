@@ -8,7 +8,11 @@ from bs4 import BeautifulSoup
 
 def GetDomainInfo(Domain):
 	PrintHeader()
-	soup = BeautifulSoup(urllib2.urlopen('http://toolbar.netcraft.com/site_report?url='+Domain).read())
+	soup = BeautifulSoup("")
+	try:
+		soup = BeautifulSoup(urllib2.urlopen('http://toolbar.netcraft.com/site_report?url='+Domain).read())
+	except urllib2.HTTPError:
+		print("Error scrapping NetCraft")
 	theTables = soup.findAll(attrs={"class" : "TBtable"})
 	
 	if len(theTables) >0:
@@ -16,9 +20,9 @@ def GetDomainInfo(Domain):
 		rows = basicTable.findAll('tr')
 		for row in rows:
 			cols = row.findAll('td')
-			if cols[0].b.renderContents().strip() != "Check another site:":
-				print(cols[0].get_text().strip()+ ":" + cols[1].get_text().strip())
-				print(cols[2].get_text().strip()+ ":\t" + cols[3].get_text().strip())
+			if cols[0].get_text().encode('ascii', 'ignore').strip() != "Check another site:":
+				print(cols[0].get_text().encode('ascii', 'ignore').strip()+ ":" + cols[1].get_text().strip())
+				print(cols[2].get_text().encode('ascii', 'ignore').strip()+ ":\t" + cols[3].get_text().encode('ascii', 'ignore').strip())
 
 	if len(theTables) >1:
 		print("")
@@ -30,10 +34,10 @@ def GetDomainInfo(Domain):
 		for row in rows:
 			headers = row.findAll('th')
 			if len(headers) ==5:
-				print(headers[0].get_text() + "\t\t"+ headers[1].get_text() + "\t\t"+ headers[2].get_text()+ "\t\t"+ headers[3].get_text()+ "\t\t"+ headers[4].get_text())
+				print(headers[0].get_text().encode('ascii', 'ignore') + "\t\t"+ headers[1].get_text().encode('ascii', 'ignore') + "\t\t"+ headers[2].get_text().encode('ascii', 'ignore')+ "\t\t"+ headers[3].get_text().encode('ascii', 'ignore')+ "\t\t"+ headers[4].get_text().encode('ascii', 'ignore'))
 			cols = row.findAll('td')
 			if len(cols) ==5:
-				print(cols[0].get_text() + "\t\t"+ cols[1].get_text() + "\t\t"+ cols[2].get_text()+ "\t\t"+ cols[3].get_text()+ "\t\t"+ cols[4].get_text())
+				print(cols[0].get_text().encode('ascii', 'ignore') + "\t\t"+ cols[1].get_text().encode('ascii', 'ignore')+ "\t\t"+ cols[2].get_text().encode('ascii', 'ignore')+ "\t\t"+ cols[3].get_text().encode('ascii', 'ignore')+ "\t\t"+ cols[4].get_text().encode('ascii', 'ignore'))
 
 def PrintHeader():
 	header ="""         

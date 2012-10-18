@@ -32,13 +32,13 @@ def GetIpInfoPost(IP):
 		temp =""
 		cols = tr.findAll('td')
 		if len(cols) == 2:
-			temp += cols[0].find(text=True)
+			temp += cols[0].get_text().encode('ascii', 'ignore').strip()
 			temp += " "
-			temp += cols[1].find(text=True)
+			temp += cols[1].get_text().encode('ascii', 'ignore').strip()
 		if len(cols) == 4:
-			temp += cols[0].find(text=True)
+			temp += cols[0].get_text().encode('ascii', 'ignore').strip()
 			temp += ": "
-			temp += cols[2].contents[2].contents[0]
+			temp += cols[2].get_text().encode('ascii', 'ignore').strip()
 		print(temp)
 
 def GetIpInfoGet(IP):
@@ -49,11 +49,11 @@ def GetIpInfoGet(IP):
 		temp =""
 		cols = tr.findAll('td')
 		if len(cols) == 2:
-			temp += cols[0].find(text=True)
+			temp += cols[0].get_text().encode('ascii', 'ignore').strip()
 			temp += " "
-			temp += cols[1].find(text=True)
+			temp += cols[1].get_text().encode('ascii', 'ignore').strip()
 		if len(cols) == 4:
-			temp += cols[0].find(text=True)
+			temp += cols[0].get_text().encode('ascii', 'ignore').strip()
 			temp += ": "
-			temp += cols[2].contents[2].contents[0]
+			temp += cols[2].get_text().encode('ascii', 'ignore').strip()
 		print(temp)

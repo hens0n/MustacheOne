@@ -22,13 +22,15 @@ def GetDomainInfo(Domain):
 				if cols[0].has_key('rowspan'):
 					print("**********"+cols[0].renderContents().strip()+"**********")
 					print("\t***"+ cols[2].renderContents().strip())
-					contents = ''.join(cols[3].findAll(text=True))
+					#contents = ''.join(cols[3].findAll(text=True))
+					contents = cols[3].get_text().encode('ascii', 'ignore').strip()
 				else:
 					print("\t***"+cols[1].renderContents().strip())
-					contents = ''.join(cols[2].findAll(text=True))
+					#contents = ''.join(cols[2].findAll(text=True))
+					contents = cols[2].get_text().encode('ascii', 'ignore').strip()
 				
 				if len(contents) > 0:
-					contents2 =contents.encode('ascii', 'ignore').replace("\t\n","").replace("  ","").replace('\n\n', ' ').replace("\t","").replace("  ","")
+					contents2 =contents.replace("\t\n","").replace("  ","").replace('\n\n', ' ').replace("\t","").replace("  ","")
 					for line in string.split(contents2, '\n'):
 						if len(line.strip()) > 0:
 							print("\t\t"+line)

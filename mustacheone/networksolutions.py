@@ -36,19 +36,17 @@ def GetDomainInfo(Domain):
 		theSubTable = thetable.find("table")
 		cols = theSubTable.findAll('td')
 		for col in cols:
-			c = col.renderContents().strip()
+			c = col.get_text().encode('ascii', 'ignore').strip()
 			if len(c) > 4	:		
 				if col.strong != None:
 					c = c.replace('\n','')
 					c = c.replace('\t','')
-					c = c.replace('<strong>','')
-					c = c.replace('</strong>','')
 					print("")
 					print("*"+c)
 				elif  col.a != None:
-					if 'target' in col.a.attrs and not "underlying" in col.a.renderContents().strip():
-						print(col.a.renderContents().strip())
+					if 'target' in col.a.attrs and not "underlying" in col.get_text().encode('ascii', 'ignore').strip():
+						print(col.get_text().encode('ascii', 'ignore').strip())
 				elif  col.pre != None:
-					print(col.pre.renderContents().strip())		
+					print(col.get_text().encode('ascii', 'ignore').strip())		
 				else:
 					print(c.strip())
