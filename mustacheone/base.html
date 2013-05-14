@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+	<h1>Mustache One</h1>
+	<p>Submit IP and URLs.  One per line</p>
+	<form action="search" method="post">
+	    <textarea id="inquery" name="inquery" rows="4" cols="50">${inquery}</textarea>
+
+	    <p><input type="submit" value="Submit"/></p>
+	    <p><input type="reset" value="Clear"/></p>
+	</form>
+% if reports:
+	${reports}
+% endif
+
+</body>
+</html>

@@ -1,85 +1,33 @@
 #!/usr/bin/python
 # -*- coding: latin-1 -*-
-import datetime
 import sys
-import socket
 import ConfigParser
+import mustacheone
 
 
-from mustacheone import ipvoid
-from mustacheone import networksolutions
-from mustacheone import projecthoneypot
-from mustacheone import virustotal
-from mustacheone import intodns
-from mustacheone import netcraft
-from mustacheone import google
-
-def ReportHeader(query):
-	header ="""
-___  ___          _             _           _____            
-|  \\/  |         | |           | |         |  _  |           
-| .  . |_   _ ___| |_ __ _  ___| |__   ___ | | | |_ __   ___ 
-| |\\/| | | | / __| __/ _` |/ __| '_ \\ / _ \\| | | | '_ \\ / _ \\
-| |  | | |_| \\__ \\ || (_| | (__| | | |  __/\\ \\_/ / | | |  __/
-\\_|  |_/\\__,_|___/\\__\\__,_|\\___|_| |_|\\___| \\___/|_| |_|\\___|                                                            
-    https://github.com/cyberphilia/MustacheOne
-"""
-	now = datetime.datetime.now()
-	print(header)
-	print("==========================================================")
-	print("Report for " + query)
-	print(now)
-	print("==========================================================")
-                                                           
-                                                             
-
-def IsIp(query):
-	try:
-		socket.inet_aton(query)
-		return True
-	except socket.error:
-		return False
-
-def getConfig(section, name):
-	try:
-		config = ConfigParser.RawConfigParser()
-		config.read('config.ini')
-		rtn = config.get(section,name)
-		return rtn
-	except ConfigParser.NoSectionError:
-		print("Section Not Found")
-	except ConfigParser.NoOptionError:
-		print("Option Not Found")
 
 def main(argv):
+	report = ""
 	if len(argv)==0:
-		print("Please provide an argument")
-		print("Single URL usage: MustacheOne.py github.com")
-		print("Single IP usage: MustacheOne.py 208.78.70.16")
-		print("Combination usage: MustacheOne.py github.com 208.78.70.16 google.com")
-	
-	
+		print mustacheone.usage()
 
-	for arg in argv:
-		ReportHeader (arg)
+		report = mustacheone.get_report('google.com')
+		# report = mustacheone.get_report('63.233.126.124')
+		# foo = mustacheone.URL()
+		# foo.address = 'camber.com'
+		# report += mustacheone.get_header(foo.address)
 
-		virustotalkey= getConfig("virustotal","apikey")
-		if virustotalkey != None:
-				virustotal.GetUrlReport(arg,virustotalkey)
-		else:
-			print("****You will need to put your Virus Total API key in config.ini.  Review the README")
-		
+		#print 
+		print report
 
-		if IsIp(arg):
-			ipvoid.GetIpInfoPost(arg)
-			projecthoneypot.GetIpInfo(arg)
-			networksolutions.GetIpInfo(arg)
-		else:
-			intodns.GetDomainInfo(arg)
-			netcraft.GetDomainInfo(arg)
-			networksolutions.GetDomainInfo(arg)
-			google.PrintQueries(arg)
-
+	else:
+		for arg in argv:
+			if arg == 'webgui':
+				print 'webgui'
+				mustacheone.start_webgui()
+			else:
+				report = mustacheone.get_report(arg)
+				print report
 
 if __name__ == "__main__":
 	main(sys.argv[1:])
