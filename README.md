@@ -15,12 +15,16 @@ Usage:
 * Single IP usage: MustacheOne.py 208.78.70.16
 * Single URL usage: MustacheOne.py github.com
 * Combination usage: MustacheOne.py github.com 208.78.70.16 google.com
+* Launch WebGUI(Open 127.0.0.1:8080) MustacheOne.py webgui 
 
 Dependencies:
 -----------------
 * [Python][python]
 * [Beautiful Soup][beautifulsoup]
 * [simplejson][simplejson]
+* [Mako Templating][mako]
+* [CherryPy][cherrypy]
+* [MarkDown][markdown]
 
 Configuration:
 -----------------
@@ -44,6 +48,9 @@ Example config.ini
 [virustotal]: https://www.virustotal.com/
 [intodns]: http://www.intodns.com/
 [netcraft]: http://news.netcraft.com/
+[mako]: http://www.makotemplates.org/
+[cherrypy]: http://www.cherrypy.org/
+[markdown]: http://packages.python.org/Markdown/
 
 Sample Output for github.com:
 -----------------

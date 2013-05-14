@@ -18,13 +18,11 @@ import markdown
 
 def usage():
 	rtn = """
-	Please provide an argument
-	Single URL usage: MustacheOne.py github.com
-	Single IP usage: MustacheOne.py 208.78.70.16
-	Combination usage: MustacheOne.py github.com 208.78.70.16 google.com
-
-	Launch Web GUI MustacheOne.py webgui
-	--Then open your browser to 127.0.0.1:8080
+	* Please provide an argument(s)
+	* Single URL usage: MustacheOne.py github.com
+	* Single IP usage: MustacheOne.py 208.78.70.16
+	* Combination usage: MustacheOne.py github.com 208.78.70.16 google.com
+	* Launch WebGUI(Open 127.0.0.1:8080): MustacheOne.py webgui
 	"""
 	return rtn
 
@@ -55,12 +53,12 @@ def get_report(query):
 def get_reports(parm):
 	report = ""
 	report += get_header(parm.address)
-	# report += projecthoneypot.get_header()
-	# report += projecthoneypot.get_info(parm)
-	# report += intodns.get_header()
-	# report += intodns.get_info(parm)
-	# report += google.get_header()
-	# report += google.get_info(parm)
+	report += projecthoneypot.get_header()
+	report += projecthoneypot.get_info(parm)
+	report += intodns.get_header()
+	report += intodns.get_info(parm)
+	report += google.get_header()
+	report += google.get_info(parm)
 	return report
 
 def is_ip(query):

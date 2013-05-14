@@ -17,17 +17,26 @@ Project Honey Pot
 
 def get_info(inquery):
 	if inquery.__class__.__name__ == 'IP':
-		return get_html_ip(inquery.address)
+		html = get_html_ip(inquery.address)
+		return get_elements(html)
 	if inquery.__class__.__name__ == 'URL':
-		return get_html_url(inquery.address)
+		rtn = """
+Project Honey Pot does not let you query urls.
+
+"""		
+		return rtn
 def get_html_ip(ip):
-	soup = BeautifulSoup(urllib2.urlopen('http://www.projecthoneypot.org/ip_'+ip).read())
-	theTag =soup.find("div", { "class" : "contain" })
+	html = urllib2.urlopen('http://www.projecthoneypot.org/ip_'+ip).read()	
+	return html
+def get_elements(html):
+	soup =BeautifulSoup(html)
+	theTag = soup.find("div", { "class" : "contain" })
 	rtn = theTag.contents[3].get_text().encode('ascii', 'ignore').strip() + "\n"
 	return rtn
-def get_html_url(url):
-	rtn = """
-	Project Honey Pot does not let you query urls.
 
-	"""
-	return rtn
+# def get_html_url(url):
+# 	rtn = """
+# 	Project Honey Pot does not let you query urls.
+
+# 	"""
+# 	return rtn
