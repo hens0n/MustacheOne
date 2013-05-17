@@ -8,6 +8,7 @@ import string
 import projecthoneypot
 import google
 import intodns
+import ipvoid
 
 sys.path.append('libs/')
 import cherrypy
@@ -57,6 +58,8 @@ def get_reports(parm):
 	report += projecthoneypot.get_info(parm)
 	report += intodns.get_header()
 	report += intodns.get_info(parm)
+	report += ipvoid.get_header()
+	report += ipvoid.get_info(parm)
 	report += google.get_header()
 	report += google.get_info(parm)
 	return report
