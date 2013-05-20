@@ -28,6 +28,7 @@ def get_info(inquery):
 def get_html_ip(ip):
 	rtn = """
 	intoDNS does not let you query ips.
+
 	"""
 	return rtn
 def get_html_url(url):
@@ -68,5 +69,8 @@ def get_elements(html):
 								# print '>>' + line
 								rtn += ("* %s\n" %(line))
 	else:
-		rtn += ("Unable to find data in page.")
+		rtn += """
+Unable to find data in page.
+	
+"""
 	return rtn

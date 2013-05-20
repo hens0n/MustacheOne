@@ -99,7 +99,7 @@ class webgui:
 		reports = ''
 		lines = string.split(inquery, '\n')
 		for line in lines:
-			reports += get_report(line) + '***'
+			reports += get_report(line) + '\n***'
 		# reports = get_report('69.147.143.2')
 		# reports = get_report('camber.com')
 		if len(reports) >0 :

@@ -64,5 +64,6 @@ def get_info(inquery):
 def get_html_url(url):
 	rtn = """
 	IP Void does not let you query urls.
+
 	"""
 	return rtn
