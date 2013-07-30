@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>MustacheOne</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="/css/starter-template.css" rel="stylesheet">
+    <link href="/css/print.css" rel="stylesheet" media="print">
+  </head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Mustache One</a>
+        <div class="nav-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="/">Home</a></li>
+            <li><a href="https://github.com/cyberphilia/MustacheOne" target="_blank">Source on GitHub</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+
+
+<div class="container">
+
+			<div id="navgap">
+			<br/>
+			<br/>
+			<br/>
+			</div>
+			<form action="/search" method="post">
+				<fieldset>
+				    <legend>Search</legend>
+					<div class="form-group">
+					    <textarea id="inquery" name="inquery"  class="form-control" rows="4" cols="50" placeholder="Enter IP and URLs.  One per line">${inquery}</textarea>
+					</div><!-- /.form-group -->
+				    <p>
+					    <input class="btn btn-primary" type="submit" value="Submit"/> 
+					    <input class="btn btn-danger" type="reset" value="Clear"/>
+				    </p>
+				    
+				</fieldset>
+			</form>
+		% if reports:
+			${reports}
+		% endif
+
+    </div><!-- /.container -->
+    <script src="/js/jquery-1.10.2.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+</body>
+</html>

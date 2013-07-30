@@ -9,8 +9,7 @@ sys.path.append('libs/')
 from bs4 import BeautifulSoup
 def get_header():
 	rtn = """
-IP Void
--------
+###IP Void
 [IP Void Website](https://www.ipvoid.com)
 
 """
@@ -64,5 +63,5 @@ def get_info(inquery):
 def get_html_url(url):
 	rtn = """
 	IP Void does not let you query urls.
-	"""
+"""
 	return rtn

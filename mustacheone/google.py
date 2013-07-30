@@ -3,8 +3,7 @@
 
 def get_header():
 	rtn = """
-Google Recon Queries
---------------------
+###Google Recon Queries
 [Google Website](http://www.google.com)
 
 """
@@ -19,7 +18,7 @@ def get_html_ip(ip):
 	rtn = """
 	Not Complete
 
-	"""
+"""
 	return rtn
 def get_html_url(url):
 	rtn = ("- [Subdomains excluding www: site:%s -www. %s](http://www.google.com/?q=site:%s -www. %s)\n" % (url,url,url,url))

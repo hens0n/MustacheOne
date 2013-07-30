@@ -9,8 +9,7 @@ from bs4 import BeautifulSoup
 
 def get_header():
 	rtn = """
-intoDNS
--------
+###intoDNS
 [intoDNS Website](http://www.intodns.com)
 
 """

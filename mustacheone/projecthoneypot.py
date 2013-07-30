@@ -8,8 +8,7 @@ from bs4 import BeautifulSoup
 
 def get_header():
 	rtn = """
-Project Honey Pot
------------------
+###Project Honey Pot
 [Project Honey Pot Website](http://www.projecthoneypot.org)
 
 """

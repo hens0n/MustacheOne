@@ -9,6 +9,7 @@ import projecthoneypot
 import google
 import intodns
 import ipvoid
+import os
 
 sys.path.append('libs/')
 import cherrypy
@@ -87,21 +88,20 @@ class IP:
 class URL:
 	address = ''
 def start_webgui():
+	cherrypy.config.update({'server.socket_host': '127.0.0.1', 'server.socket_port': 8080,'tools.staticdir.on': True, 'tools.staticdir.dir': os.path.normpath(os.path.abspath(os.path.curdir)+'/public')})
 	cherrypy.quickstart(webgui())
 class webgui:
 	@cherrypy.expose
 	def index(self):
-		mytemplate = Template(filename='mustacheone/base.html')
+		mytemplate = Template(filename='mustacheone/html/base.html')
 		return mytemplate.render(inquery='')
 	@cherrypy.expose
 	def search(self, inquery=None):
-		mytemplate = Template(filename='mustacheone/base.html')
+		mytemplate = Template(filename='mustacheone/html/base.html')
 		reports = ''
 		lines = string.split(inquery, '\n')
 		for line in lines:
-			reports += get_report(line) + '***'
-		# reports = get_report('69.147.143.2')
-		# reports = get_report('camber.com')
+			reports += get_report(line) + '***\r\n***'
 		if len(reports) >0 :
 			return mytemplate.render(inquery=inquery, reports=markdown.markdown(reports))
 		else:
