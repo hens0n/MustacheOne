@@ -30,7 +30,10 @@ def get_html_ip(ip):
 	"""
 	return rtn
 def get_html_url(url):
-	html = urllib2.urlopen('http://www.intodns.com/'+url).read()
+	headers = { 'User-Agent' : 'MustacheOne/1.0' }
+	req = urllib2.Request('http://www.intodns.com/'+url, None, headers)
+	html = urllib2.urlopen(req).read()
+	# html = urllib2.urlopen('http://www.intodns.com/'+url).read()
 	return html
 def get_elements(html):
 	rtn = ""

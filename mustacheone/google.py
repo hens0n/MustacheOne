@@ -15,10 +15,7 @@ def get_info(inquery):
 	if inquery.__class__.__name__ == 'URL':
 		return get_html_url(inquery.address)
 def get_html_ip(ip):
-	rtn = """
-	Not Complete
-
-"""
+	rtn = ("- [IP Search: %s](http://www.google.com/?q=%s)" % (url,url))
 	return rtn
 def get_html_url(url):
 	rtn = ("- [Subdomains excluding www: site:%s -www. %s](http://www.google.com/?q=site:%s -www. %s)\n" % (url,url,url,url))
